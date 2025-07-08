@@ -54,9 +54,10 @@ export default function Home() {
     dispatch(setPhotographers(result.slice(0, page * 4)));
   }, [filters, allPhotographers, page]);
 
-  const handleSearch = debounce((text: string) => {
-    dispatch(setFilters({ search: text }));
-  }, 300);
+const handleSearch = debounce((...args: unknown[]) => {
+  const text = args[0] as string;
+  dispatch(setFilters({ search: text }));
+}, 300);
 
   return (
     <main className="flex flex-col md:flex-row min-h-screen">
