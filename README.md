@@ -1,4 +1,4 @@
-# 📸 Pixisphere – Photographer Directory App
+# 📸 Pixisphere 
 
 A responsive photographer directory web app built with:
 
