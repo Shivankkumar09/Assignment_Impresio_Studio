@@ -8,7 +8,8 @@ A responsive photographer directory web app built with:
 - **JSON Server (for mock backend)**
 
 ---
-##live_link: https://assignment-impresio-studio-vzjt.vercel.app/
+##Live_link: https://assignment-impresio-studio-vzjt.vercel.app/
+
 ---
 
 ## 🚀 Setup Instructions
@@ -37,6 +38,17 @@ A responsive photographer directory web app built with:
 
    The mock API will be available at:  
    👉 `http://localhost:3001/photographers`
+
+---
+# 🛰️ Backend Setup (Hosted JSON Server) [update]
+   You don’t need to run json-server locally anymore. A live backend is already deployed!
+
+    ✅ API Endpoint (Hosted on Render):
+```bash
+
+https://backend-db-dys4.onrender.com/photographers
+```
+   This is used in the frontend to fetch photographer data dynamically.
 
 ---
 
