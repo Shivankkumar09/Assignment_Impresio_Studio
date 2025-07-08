@@ -17,6 +17,8 @@ interface Photographer {
   price: number;
 }
 
+
+
 export default function Home() {
   const dispatch = useDispatch();
   const { photographers, filters } = useSelector((state: RootState) => state.photographer);
@@ -60,7 +62,13 @@ const handleSearch = debounce((...args: unknown[]) => {
 }, 300);
 
   return (
+    <>
+   <h1 className="text-3xl md:text-4xl font-bold text-gray-100 mx-5 my-3 mb-6 tracking-wide">
+  Pixisphere
+</h1>
     <main className="flex flex-col md:flex-row min-h-screen">
+
+
       {/* Sidebar */}
       <aside className="md:w-1/5 w-full p-4 md:p-6 bg-white shadow-lg border-r space-y-4 md:space-y-6 max-h-[60vh] md:max-h-none overflow-y-auto">
 
@@ -125,5 +133,6 @@ const handleSearch = debounce((...args: unknown[]) => {
         </div>
       </section>
     </main>
+    </>
   );
 }
