@@ -2,7 +2,17 @@
 import Link from "next/link";
 import React from "react";
 
-const PhotographerCard = ({ photographer }: { photographer: any }) => {
+interface Photographer {
+  id: string;
+  name: string;
+  profilePic: string;
+  location: string;
+  price: number;
+  rating: number;
+  tags: string[];
+}
+
+const PhotographerCard = ({ photographer }: { photographer: Photographer }) => {
   return (
     <div className="border p-4 rounded-xl shadow-md bg-white hover:shadow-xl transition">
       <img
