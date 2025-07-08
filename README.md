@@ -8,7 +8,7 @@ A responsive photographer directory web app built with:
 - **JSON Server (for mock backend)**
 
 ---
-##Live_link: https://assignment-impresio-studio-vzjt.vercel.app/
+## Live_link: https://assignment-impresio-studio-vzjt.vercel.app/
 
 ---
 
