@@ -6,12 +6,23 @@ import { setPhotographers, setFilters } from "@/redux/photographerSlice";
 import PhotographerCard from "@/components/PhotographerCard";
 import { debounce } from "@/utils/debounce";
 
+// Define the Photographer type
+interface Photographer {
+  id: number;
+  name: string;
+  location: string;
+  rating: number;
+  styles: string[];
+  tags: string[];
+  price: number;
+}
+
 export default function Home() {
   const dispatch = useDispatch();
   const { photographers, filters } = useSelector((state: RootState) => state.photographer);
 
   const [page, setPage] = useState(1);
-  const [allPhotographers, setAllPhotographers] = useState<any[]>([]);
+  const [allPhotographers, setAllPhotographers] = useState<Photographer[]>([]);
 
   useEffect(() => {
     const fetchPhotographers = async () => {
@@ -31,10 +42,10 @@ export default function Home() {
       result = result.filter((p) => filters.styles.every((style) => p.styles.includes(style)));
     if (filters.search)
       result = result.filter(
-        (p) =>
-          p.name.toLowerCase().includes(filters.search.toLowerCase()) ||
-          p.location.toLowerCase().includes(filters.search.toLowerCase()) ||
-          p.tags.some((tag) => tag.toLowerCase().includes(filters.search.toLowerCase()))
+      (p: Photographer) =>
+        p.name.toLowerCase().includes(filters.search!.toLowerCase()) ||
+        p.location.toLowerCase().includes(filters.search!.toLowerCase()) ||
+        p.tags.some((tag: string) => tag.toLowerCase().includes(filters.search!.toLowerCase()))
       );
     if (filters.sort === "price-asc") result = result.sort((a, b) => a.price - b.price);
     if (filters.sort === "rating-desc") result = result.sort((a, b) => b.rating - a.rating);
